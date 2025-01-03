@@ -11,9 +11,13 @@ The purpose of a Dead-letter Queue (DLQ) is to store messages that could not be 
 
 To enable email notifications when messages are added to a Dead-letter Queue (DLQ), we can use Amazon CloudWatch Alarms combined with Amazon SNS.
 Here are the configuration guidelines:
+
 a) Set up an SNS Topic to manage notifications and subscribe to it using our email address.
+
 b) Create a CloudWatch Alarm that monitors the DLQ's NumberOfMessagesSent metric.
+
 c) Configure the alarm to trigger an SNS notification to us email when the number of messages in the DLQ exceeds zero.
+
 This method ensures that we receive email notifications whenever messages are added to the Dead Letter Queue, helping us stay informed and take appropriate action on failed messages.
 
 
